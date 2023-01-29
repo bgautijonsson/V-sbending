@@ -19,7 +19,7 @@ reykjanes_col <- "#023858"
 
 other_col <- "#bdbdbd"
 
-col_scale <- scale_fill_brewer(palette = "Blues")
+col_scale <- scale_fill_brewer(palette = "Blues", direction = 1)
 
 folder <- "2023-02-03"
 

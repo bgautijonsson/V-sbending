@@ -86,10 +86,10 @@ lengd_dvalar <- hg_data(url) |>
         lengd_dvalar = ifelse(lengd_dvalar == "1-2 tvö ár", "1-2 ár", lengd_dvalar),
         lengd_dvalar = fct_relevel(
             lengd_dvalar,
-            "Innan við ár",
-            "1-2 ár",
-            "3-5 ár",
+            "11 ár og lengur",
             "6-10 ár",
-            "11 ár og lengur"
+            "3-5 ár",
+            "1-2 ár",
+            "Innan við ár"
         )
     )
