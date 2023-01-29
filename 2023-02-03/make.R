@@ -21,8 +21,11 @@ other_col <- "#bdbdbd"
 
 col_scale <- scale_fill_brewer(palette = "Blues")
 
+folder <- "2023-02-03"
 
-here("2023-02-03") |>
+git_url <- glue("https://www.github.com/bgautijonsson/visbending/{folder}")
+
+here(folder) |>
     setwd()
 
 source("data.R")

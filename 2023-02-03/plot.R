@@ -43,7 +43,9 @@ p2 <- hlutf_alls |>
     ggplot(aes(dags, hlutf,  colour = reyk, linewidth = reyk)) +
     geom_line(aes(group = sveitarfelag)) +
     scale_x_date(
-        expand = expansion()
+        expand = expansion(),
+        breaks = breaks_width("2 year", offset = "1 year"),
+        labels = label_date_short()
     ) +
     scale_y_continuous(
         labels = label_hlutf(accuracy = 1),
@@ -75,7 +77,8 @@ lower_theme <- theme(
     plot.title = element_text(size = 12),
     plot.subtitle = element_text(size = 8),
     legend.position = "left",
-    strip.background = element_rect(colour = NA, fill = "grey93")
+    strip.background = element_rect(colour = NA, fill = "grey93"),
+    plot.margin = margin(r = 15)
 )
 
 p3 <- lengd_dvalar |>
@@ -83,7 +86,8 @@ p3 <- lengd_dvalar |>
     ggplot(aes(ar, value, fill = lengd_dvalar)) +
     geom_area(position = "stack") +
     scale_x_continuous(
-        expand = expansion()
+        expand = expansion(),
+        breaks = seq(1998, 2022, 4)
     ) +
     scale_y_continuous(
         expand = expansion(),
@@ -106,7 +110,8 @@ p4 <- lengd_dvalar |>
     ggplot(aes(ar, hlutf, fill = lengd_dvalar)) +
     geom_area(position = "stack") +
     scale_x_continuous(
-        expand = expansion()
+        expand = expansion(),
+        breaks = seq(1998, 2022, 4)
     ) +
     scale_y_continuous(
         expand = expansion(),
@@ -148,7 +153,7 @@ p <- p1 + p2 +
         design = design, heights = c(0.5, 0.5)
     ) +
     plot_annotation(
-        caption = "Heimildir, gögn og kóði: https://www.github.com/bgautijonsson/visbending/2023-02-03",
+        caption = glue("Heimildir, gögn og kóði: {git_url}"),
         theme = theme(
             plot.title = element_markdown(),
             plot.subtitle = element_markdown(size = 12, margin = margin())
