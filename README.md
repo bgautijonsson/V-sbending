@@ -9,4 +9,5 @@ Vísbendingu.
 Greinar:
 
 - 2023-02-03: [Greining á hlutfalli íbúa Reykjanesbæjar sem eru af
-  erlendum uppruna](2023-02-3/)
+  erlendum
+  uppruna](https://github.com/bgautijonsson/visbending/tree/master/2023-02-03)

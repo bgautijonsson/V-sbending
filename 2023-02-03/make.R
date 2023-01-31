@@ -23,7 +23,7 @@ col_scale <- scale_fill_brewer(palette = "Blues", direction = 1)
 
 folder <- "2023-02-03"
 
-git_url <- glue("https://www.github.com/bgautijonsson/visbending/{folder}")
+git_url <- glue("https://www.github.com/bgautijonsson/visbending")
 
 here(folder) |>
     setwd()

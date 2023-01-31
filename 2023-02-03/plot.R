@@ -168,14 +168,16 @@ p <- p1 + p2 +
 p
 
 ggsave(
-    plot = p1,
+    plot = p1 +
+        labs(caption = glue("Heimildir, gögn og kóði: {git_url}")),
     filename = "Figures/fig1.png",
     dpi = 320,
     width = 8, height = 0.5 * 8, scale = 1.3
 )
 
 ggsave(
-    plot = p2,
+    plot = p2 +
+        labs(caption = glue("Heimildir, gögn og kóði: {git_url}")),
     filename = "Figures/fig2.png",
     dpi = 320,
     width = 8, height = 0.5 * 8, scale = 1.3
@@ -185,8 +187,9 @@ ggsave(
     plot = p3 +
         theme(
             legend.margin = margin(r = 5, l = 5),
-            plot.margin = margin(r = 5, b = 5, l = 5, t = 5)
-        ),
+            plot.margin = margin(r = 15, b = 5, l = 5, t = 5)
+        ) +
+        labs(caption = glue("Heimildir, gögn og kóði: {git_url}")),
     filename = "Figures/fig3.png",
     dpi = 320,
     width = 8, height = 0.5 * 8, scale = 1.3
@@ -196,15 +199,16 @@ ggsave(
     plot = p4 +
         theme(
             legend.position = "none",
-            plot.margin = margin(r = 5, b = 5, l = 5, t = 5)
-        ),
+            plot.margin = margin(r = 15, b = 5, l = 5, t = 5)
+        ) +
+        labs(caption = glue("Heimildir, gögn og kóði: {git_url}")),
     filename = "Figures/fig4.png",
     dpi = 320,
     width = 8, height = 0.5 * 8, scale = 1.3
 )
 
 ggsave(
-    plot = p,
+    plot = p ,
     filename = "Figures/reykjanesbær.png",
     dpi = 320,
     width = 8, height = 0.621 * 8, scale = 1.3
