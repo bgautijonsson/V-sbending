@@ -10,7 +10,7 @@ editor: source
 
 Við sjáum að umrætt hlutfallið hækkaði í kringum fjögur %-stig í 29,3% árið 2022 úr um það bil 25% þar sem það hafði staðið í nokkur ár. Þessi fullyrðin er því rétt.
 
-Ef við lítum á þessa innfluttu íbúa út frá lengd dvalar þeirra á Íslandi sjáum við þó að flestir íbúar með erlent ríkisfang (75% árið 2022) þar hafa búið þar í 3 ár eða lengur. Þau sem hefðu búað í Reykjanesbæ í eitt ár eða skemur voru 531 á síðasta ársfjórðungi 2022 eða 9,7%.
+Ef við lítum á þessa innfluttu íbúa út frá lengd dvalar þeirra á Íslandi sjáum við þó að flestir íbúar með erlent ríkisfang (75% árið 2022) þar hafa búið þar í 3 ár eða lengur. Þau sem höfðu búið í Reykjanesbæ í eitt ár eða skemur voru 531 á síðasta ársfjórðungi 2022 eða 9,7%. Höfum í huga að tölur um lengd dvalar eru frá 1. janúar 2022 og breytingar ársins 2022 því ekki með í þeim gögnum ennþá.
 
 ![](Figures/reykjanesbær.png)
 

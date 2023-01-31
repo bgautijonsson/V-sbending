@@ -5,3 +5,8 @@
 
 Hérna mun ég geyma kóða til að endurtaka úrvinnslur mínar fyrir
 Vísbendingu.
+
+Greinar:
+
+- 2023-02-03: [Greining á hlutfalli íbúa Reykjanesbæjar sem eru af
+  erlendum uppruna](2023-02-3/)
