@@ -1,11 +1,16 @@
 ---
-title: "Vísbending"
+title: "Silfrið og Reykjanesbær"
 date: "2023-02-03"
 author: Metill
 format: pdf
 editor: source
 ---
 
+Í þætti Silfursins sem var sýndur á sunnudaginn 29. janúar var bent á að 30% íbúa í Reykjanesbæ væru af erlendum uppruna og að megnið af þeim byggi á Ásbrú (á vegum Útlendingastofnunar). Hvernig ber þessu saman við gögn? 
+
+Við sjáum að umrætt hlutfallið hækkaði í kringum fjögur %-stig í 29,3% árið 2022 úr um það bil 25% þar sem það hafði staðið í nokkur ár. Þessi fullyrðin er því rétt.
+
+Ef við lítum á þessa innfluttu íbúa út frá lengd dvalar þeirra á Íslandi sjáum við þó að flestir íbúar með erlent ríkisfang (75% árið 2022) þar hafa búið þar í 3 ár eða lengur. Þau sem hefðu búað í Reykjanesbæ í eitt ár eða skemur voru 531 á síðasta ársfjórðungi 2022 eða 9,7%.
 
 ![](Figures/reykjanesbær.png)
 

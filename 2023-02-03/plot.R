@@ -6,7 +6,7 @@ upper_theme <- theme(
     plot.margin = margin(t = 5, r = 10, b = 5, l = 5),
     plot.title = element_text(size = 12),
     plot.subtitle = element_text(size = 8),
-    axis.text = element_text(size = 8)
+    axis.text = element_text(size = 7)
 )
 
 p1 <- hlutf_alls |>
@@ -38,6 +38,7 @@ p1 <- hlutf_alls |>
         title = "Hlutfall innfluttra af öllum ríkisborgurum",
         subtitle = glue("Staðan {format(max(hlutf_alls$dags), '%d. %B %Y')}") |> str_replace("01", "1")
     )
+
 
 p2 <- hlutf_alls |>
     ggplot(aes(dags, hlutf,  colour = reyk, linewidth = reyk)) +
@@ -115,16 +116,20 @@ p4 <- lengd_dvalar |>
     ) +
     scale_y_continuous(
         expand = expansion(),
-        labels = label_hlutf(accuracy = 1),
-        position = "right"
+        labels = label_hlutf(accuracy = 1)
+        # position = "right"
     )  +
     col_scale +
     lower_theme +
+    coord_cartesian(
+        xlim = c(1996, 2022),
+        clip = "off"
+    ) +
     labs(
         x = NULL,
         y = NULL,
         fill = "Lengd dvalar",
-        subtitle = "Langflestir erlendir ríkisborgarar í Reykjanesbæ hafa búið á Íslandi í 3 ár eða lengur"
+        subtitle = "Flestir (~75%) erlendir íbúar Reykjanesbæjar hafa búið á Íslandi í 3 ár eða lengur"
     ) +
     facet_wrap("var")
 
@@ -159,8 +164,48 @@ p <- p1 + p2 +
             plot.subtitle = element_markdown(size = 12, margin = margin())
         )
     )
+
+p
+
+ggsave(
+    plot = p1,
+    filename = "Figures/fig1.png",
+    dpi = 320,
+    width = 8, height = 0.5 * 8, scale = 1.3
+)
+
+ggsave(
+    plot = p2,
+    filename = "Figures/fig2.png",
+    dpi = 320,
+    width = 8, height = 0.5 * 8, scale = 1.3
+)
+
+ggsave(
+    plot = p3 +
+        theme(
+            legend.margin = margin(r = 5, l = 5),
+            plot.margin = margin(r = 5, b = 5, l = 5, t = 5)
+        ),
+    filename = "Figures/fig3.png",
+    dpi = 320,
+    width = 8, height = 0.5 * 8, scale = 1.3
+)
+
+ggsave(
+    plot = p4 +
+        theme(
+            legend.position = "none",
+            plot.margin = margin(r = 5, b = 5, l = 5, t = 5)
+        ),
+    filename = "Figures/fig4.png",
+    dpi = 320,
+    width = 8, height = 0.5 * 8, scale = 1.3
+)
+
 ggsave(
     plot = p,
     filename = "Figures/reykjanesbær.png",
+    dpi = 320,
     width = 8, height = 0.621 * 8, scale = 1.3
 )
