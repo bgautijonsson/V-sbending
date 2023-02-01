@@ -2,16 +2,34 @@
 title: "Silfrið og Reykjanesbær"
 date: "2023-02-03"
 author: Metill
-format: pdf
+format: html
 editor: source
 ---
 
-Í þætti Silfursins sem var sýndur á sunnudaginn 29. janúar var bent á að 30% íbúa í Reykjanesbæ væru af erlendum uppruna og að megnið af þeim byggi á Ásbrú (á vegum Útlendingastofnunar). Hvernig ber þessu saman við gögn? 
+Í þætti Egils Helgasonar, Silfrið, sem sýndur var á sunnudaginn 29. janúar hélt Jódís Skúladóttir því fram að 30% íbúa í Reykjanesbæ væru af erlendum uppruna og að megnið af þeim byggi á Ásbrú. Útlendingastofnun rekur þar búsetuúrræði fyrir flóttafólk og umsækjendur um alþjóðlega vernd. Hvernig ber þessum fullyrðingum saman við opinber gögn? Eru 30% íbúa Reykjanesbæjar af erlendum uppruna og er þá meirihluti þeirra flóttafólk og umsækjendur um alþjóðlega vernd, eða hafa þau búið þar í lengri tíma?
 
-Við sjáum að umrætt hlutfallið hækkaði í kringum fjögur %-stig í 29,3% árið 2022 úr um það bil 25% þar sem það hafði staðið í nokkur ár. Þessi fullyrðin er því rétt.
-
-Ef við lítum á þessa innfluttu íbúa út frá lengd dvalar þeirra á Íslandi sjáum við þó að flestir íbúar með erlent ríkisfang (75% árið 2022) þar hafa búið þar í 3 ár eða lengur. Þau sem höfðu búið í Reykjanesbæ í eitt ár eða skemur voru 531 á síðasta ársfjórðungi 2022 eða 9,7%. Höfum í huga að tölur um lengd dvalar eru frá 1. janúar 2022 og breytingar ársins 2022 því ekki með í þeim gögnum ennþá.
-
-![](Figures/reykjanesbær.png)
+Á mynd 1 má sjá hlutfall íbúa af erlendum uppruna af heildaríbúum eftir sveitarfélögum í október 2022. Þar sést að hlutfallið er hæst í Reykjanesbæ (30%) og næst hæst á Hornafirði (27%). Hlutfallið er síðan um 20% í Reykjavík en 16,7% á landinu öllu. 
 
 
+Á mynd 2 sést að hlutfallið hefur veirð hæst í Reykjanesbæ frá árinu 2018, en þá var það um 20% og hækkaði í 25% næstu árin. Á síðasta ári hækkaði svo þetta hlutfall um  fjögur %-stig 2022 og fór með því úr 25% í 29,3%. Má þar með segja að fullyrðingin um hlutfall íbúa Reykjanesbæjar af erlendum uppruna sé rétt. 
+
+::: {layout-ncol=2 .column-screen-inset}
+
+![](Figures/fig1.png)
+
+![](Figures/fig2.png)
+
+:::
+
+Flóknara er hins vegar að skoða hvort megni þeirra búi í Ásbrú. Ein leið til athuga hvort það standist er að skoða tölur um fjölda erlendra íbúa eftir lengd dvalar þeirra á Íslandi, en Útlendingastofnun ber skylda til að taka upp mál innan 12 mánaða. Á myndum 3 og 4 sjáum við samantekt á þróun í fjölda innfluttra íbúa eftir lengd dvalar þeirra á Íslandi frá janúar 1997 til janúar 2022. Mynd 3 sýnir heildarfjölda þeirra, en mynd 4 sýnir hlutfallslega dreifingu þeirra eftir lengd dvalar. 
+
+Á myndunum sjáum við að erlendum íbúum fjölgaði mest milli áranna 2015 og 2020. Við sjáum líka að í byrjun árs 2022 höfðu 75% innfluttra íbúa búið á Íslandi í 3 ár eða lengur, en þau sem höfðu búið á Íslandi í eitt ár eða skemur voru 531 talsins eða 9,7%. Ef við gefum okkur þá mögulega óraunhæfu forsendu að allir þeir 1,000 íbúar með erlent ríkisfang sem fluttu til Reykjanesbæjar árið 2022 hefðu dvalið á Íslandi í innan við eitt ár yrði talan 1531 eða 23,8%. Við getum því sagt með nokkurri vissu að megni influttra íbúa í Reykjanesbæ búi ekki í Ásbrú.
+
+
+::: {layout-ncol=2 .column-screen-inset}
+
+![](Figures/fig3.png)
+
+![](Figures/fig4.png)
+
+:::

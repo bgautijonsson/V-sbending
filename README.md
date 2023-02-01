@@ -4,7 +4,8 @@
 # Vísbending
 
 Hérna mun ég geyma kóða til að endurtaka úrvinnslur mínar fyrir
-Vísbendingu.
+Vísbendingu. Með því að velja grein í listanum að neðan er hægt að sjá
+kóðann og gögnin á bak við úrvinnsluna.
 
 Greinar:
 

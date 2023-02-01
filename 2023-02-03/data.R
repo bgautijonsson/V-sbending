@@ -16,7 +16,7 @@ hlutf_alls <- hg_data(url) |>
     separate(
         arsfjordungur, into = c("ar", "man"), sep = "Á", convert = TRUE
     ) |>
-    mutate(dags = clock::date_build(ar, man)) |>
+    mutate(dags = clock::date_build(ar, 1 + 3 * (man - 1))) |>
     select(dags, sveitarfelag, kyn_og_rikisfang, value) |>
     pivot_wider(names_from = kyn_og_rikisfang) |>
     janitor::clean_names() |>
@@ -31,7 +31,7 @@ hlutf_alls <- hlutf_alls |>
     filter(
         str_detect(
             str_to_lower(sveitarfelag),
-            "reykjaví|garðab|kópav|hafnarf|mosf|seltjar|akrane|akureyr|fjarðab|árbo|múlaþ|vestman|borgarbygg|ísafjarð|suðurnes|grindaví|norðurþ|hverag|ölfus|hornafj|reykjane"
+            "alls|reykjaví|garðab|kópav|hafnarf|mosf|seltjar|akrane|akureyr|fjarðab|árbo|múlaþ|vestman|borgarbygg|ísafjarð|suðurnes|grindaví|norðurþ|hverag|ölfus|hornafj|reykjane"
         )
     ) |>
     mutate(
@@ -44,20 +44,7 @@ hlutf_alls <- hlutf_alls |>
     mutate(
         hlutf_latest = ifelse(dags == max(dags), hlutf, NA_real_),
         var1 = glue("% innflytjenda ({format(max(hlutf_alls$dags), '%d. %B %Y')})"),
-        var2 = "% innflytjenda eftir ári",
-        text1 = str_c(
-            "<b>", sveitarfelag, "</b>", "\n",
-            "Innfæddir íbúar: ", number(alls - erl_rikisborgarar, big.mark = ".", decimal.mark = ","), "\n",
-            "Innfluttir íbúar: ", number(erl_rikisborgarar, big.mark = ".", decimal.mark = ","), "\n",
-            "% innflutt: ", hlutf(hlutf_latest, accuracy = 0.1)
-        ),
-        text2 = str_c(
-            "<b>", sveitarfelag, "</b>", "\n",
-            "Dagsetning: ", dags, "\n",
-            "Innfæddir íbúar: ", number(alls - erl_rikisborgarar, big.mark = ".", decimal.mark = ","), "\n",
-            "Innfluttir íbúar: ", number(erl_rikisborgarar, big.mark = ".", decimal.mark = ","), "\n",
-            "% innflutt: ", hlutf(hlutf, accuracy = 0.1)
-        )
+        var2 = "% innflytjenda eftir ári"
     )
 
 
@@ -93,3 +80,30 @@ lengd_dvalar <- hg_data(url) |>
             "Innan við ár"
         )
     )
+
+
+lengd_dvalar |>
+    filter(ar == max(ar)) |>
+    mutate(value = ifelse(lengd_dvalar == "Innan við ár", value + 1e3, value),
+           hlutf = value / sum(value))
+
+
+# Eurostat ----------------------------------------------------------------
+
+foreign_pop <- get_eurostat(
+    "migr_pop3ctb",
+    cache = TRUE,
+    cache_dir = "data"
+)  |>
+    label_eurostat() |>
+    filter(
+        c_birth %in% c("Foreign country", "Total"),
+        age == "Total",
+        sex == "Total"
+    ) |>
+    select(geo, c_birth, time, values) |>
+    pivot_wider(names_from = c_birth, values_from = values) |>
+    janitor::clean_names() |>
+    mutate(perc_foreign = foreign_country / total)
+
+
