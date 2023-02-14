@@ -1,0 +1,93 @@
+
+
+# ATVINNA -----------------------------------------------------------------
+
+atvinna <- get_eurostat(
+    "lfsq_erganedm",
+    cache = TRUE,
+    cache_dir = "Data"
+) |>
+    label_eurostat() |>
+    filter(
+        isced11 == "All ISCED 2011 levels",
+        mgstatus %in% c("Total"),
+        citizen %in% c("Total", "Foreign country", "Reporting country"),
+        sex == "Total",
+        age == "From 20 to 64 years"
+    ) |>
+    select(-isced11, -sex, -age, -unit, -mgstatus) |>
+    rename(country = geo) |>
+    mutate(
+        country = ifelse(str_detect(country, "Germany"), "Germany", country)
+    ) |>
+    inner_join(
+        metill::country_names()
+    ) |>
+    mutate(
+        citizen = fct_recode(
+            citizen,
+            "Samtals" = "Total",
+            "Erlent" = "Foreign country",
+            "Innlent" = "Reporting country"
+        )
+    ) |>
+    select(land, vinnuafl = citizen, dags = time, hlutf_atvinna = values) |>
+    mutate(
+        hlutf_atvinna = hlutf_atvinna / 100
+    )
+
+
+atvinna |>
+    left_join(
+        litir,
+        by = join_by(land)
+    ) |>
+    write_parquet("Data/atvinna.parquet")
+
+
+
+
+
+virkni <- get_eurostat(
+    "lfsq_argan",
+    cache = TRUE,
+    cache_dir = "Data"
+) |>
+    label_eurostat() |>
+    filter(
+        age == "From 20 to 64 years",
+        sex == "Total",
+        citizen %in% c("Total", "Foreign country", "Reporting country")
+    ) |>
+    select(geo, citizen, time, values) |>
+    rename(country = geo) |>
+    mutate(
+        country = ifelse(str_detect(country, "Germany"), "Germany", country)
+    ) |>
+    inner_join(
+        metill::country_names()
+    ) |>
+    mutate(
+        citizen = fct_recode(
+            citizen,
+            "Samtals" = "Total",
+            "Erlent" = "Foreign country",
+            "Innlent" = "Reporting country"
+        )
+    ) |>
+    select(land, vinnuafl = citizen, dags = time, hlutf_virk = values) |>
+    mutate(
+        hlutf_virk = hlutf_virk / 100
+    )
+
+
+virkni |>
+    left_join(
+        litir,
+        by = join_by(land)
+    ) |>
+    write_parquet("Data/virkni.parquet")
+
+
+
+

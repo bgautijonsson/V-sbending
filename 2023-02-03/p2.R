@@ -34,56 +34,56 @@ p2_solo <- plot_dat |>
         hjust = 0.9,
         inherit.aes = FALSE
     ) +
-    geom_textline(
-        data = foreign_pop |> filter(geo == "United Kingdom", time >= min(plot_dat$dags)) |> drop_na(),
-        colour = "#0c2c84",
-        linewidth = 0.6,
-        aes(x = time, y = perc_foreign, label = "Bretland"),
-        text_smoothing = 30,
-        hjust = 0.5,
-        inherit.aes = FALSE,
-        alpha = 0.6
-    ) +
-    geom_textline(
-        data = foreign_pop |> filter(geo == "Norway", time >= min(plot_dat$dags)) |> drop_na(),
-        colour = "#a50f15",
-        linewidth = 0.6,
-        aes(x = time, y = perc_foreign, label = "Noregur"),
-        text_smoothing = 30,
-        hjust = 0.3,
-        inherit.aes = FALSE,
-        alpha = 0.6
-    ) +
-    geom_textline(
-        data = foreign_pop |> filter(geo == "Sweden", time >= min(plot_dat$dags)) |> drop_na(),
-        colour = "#fd8d3c",
-        linewidth = 0.6,
-        aes(x = time, y = perc_foreign, label = "Svíþjóð"),
-        text_smoothing = 30,
-        hjust = 0.3,
-        inherit.aes = FALSE,
-        alpha = 0.6
-    ) +
-    geom_textline(
-        data = foreign_pop |> filter(geo == "Denmark", time >= min(plot_dat$dags)) |> drop_na(),
-        colour = "#cb181d",
-        linewidth = 0.6,
-        aes(x = time, y = perc_foreign, label = "Danmörk"),
-        text_smoothing = 30,
-        hjust = 0.6,
-        inherit.aes = FALSE,
-        alpha = 0.6
-    ) +
-    geom_textline(
-        data = foreign_pop |> filter(geo == "Finland", time >= min(plot_dat$dags)) |> drop_na(),
-        colour = "#4292c6",
-        linewidth = 0.6,
-        aes(x = time, y = perc_foreign, label = "Finnland"),
-        text_smoothing = 30,
-        hjust = 0.6,
-        inherit.aes = FALSE,
-        alpha = 0.6
-    ) +
+    # geom_textline(
+    #     data = foreign_pop |> filter(geo == "United Kingdom", time >= min(plot_dat$dags)) |> drop_na(),
+    #     colour = "#0c2c84",
+    #     linewidth = 0.6,
+    #     aes(x = time, y = perc_foreign, label = "Bretland"),
+    #     text_smoothing = 30,
+    #     hjust = 0.5,
+    #     inherit.aes = FALSE,
+    #     alpha = 0.6
+    # ) +
+    # geom_textline(
+    #     data = foreign_pop |> filter(geo == "Norway", time >= min(plot_dat$dags)) |> drop_na(),
+    #     colour = "#a50f15",
+    #     linewidth = 0.6,
+    #     aes(x = time, y = perc_foreign, label = "Noregur"),
+    #     text_smoothing = 30,
+    #     hjust = 0.3,
+    #     inherit.aes = FALSE,
+    #     alpha = 0.6
+    # ) +
+    # geom_textline(
+    #     data = foreign_pop |> filter(geo == "Sweden", time >= min(plot_dat$dags)) |> drop_na(),
+    #     colour = "#fd8d3c",
+    #     linewidth = 0.6,
+    #     aes(x = time, y = perc_foreign, label = "Svíþjóð"),
+    #     text_smoothing = 30,
+    #     hjust = 0.3,
+    #     inherit.aes = FALSE,
+    #     alpha = 0.6
+    # ) +
+    # geom_textline(
+    #     data = foreign_pop |> filter(geo == "Denmark", time >= min(plot_dat$dags)) |> drop_na(),
+    #     colour = "#cb181d",
+    #     linewidth = 0.6,
+    #     aes(x = time, y = perc_foreign, label = "Danmörk"),
+    #     text_smoothing = 30,
+    #     hjust = 0.6,
+    #     inherit.aes = FALSE,
+    #     alpha = 0.6
+    # ) +
+    # geom_textline(
+    #     data = foreign_pop |> filter(geo == "Finland", time >= min(plot_dat$dags)) |> drop_na(),
+    #     colour = "#4292c6",
+    #     linewidth = 0.6,
+    #     aes(x = time, y = perc_foreign, label = "Finnland"),
+    #     text_smoothing = 30,
+    #     hjust = 0.6,
+    #     inherit.aes = FALSE,
+    #     alpha = 0.6
+    # ) +
     scale_x_date(
         expand = expansion(),
         breaks = breaks_width("2 year", offset = "1 year"),
