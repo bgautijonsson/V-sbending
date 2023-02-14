@@ -36,5 +36,9 @@ litir <- tribble(
 )
 
 
+if (!file.exists("Data/atvinna.parquet")) {
+    source("prepare_data.R")
+}
+
 source("import_data.R")
 source("figures.R")
