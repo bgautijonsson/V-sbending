@@ -9,8 +9,7 @@ kóðann og gögnin á bak við úrvinnsluna.
 
 Greinar:
 
-- 2023-02-03: [Greining á hlutfalli íbúa Reykjanesbæjar sem eru af
-  erlendum
-  uppruna](https://github.com/bgautijonsson/visbending/tree/master/2023-02-03)
-- 2023-02-17: [Innflytjendur og
-  vinnumarkaður](https://github.com/bgautijonsson/visbending/tree/master/2023-02-17)
+- 2023-02-03: [Staða innflytjenda í
+  Reykjanesbæ](https://github.com/bgautijonsson/visbending/tree/master/2023-02-03)
+- 2023-02-17: [Atvinnuþátttaka erlendra
+  ríkisborgara](https://github.com/bgautijonsson/visbending/tree/master/2023-02-17)

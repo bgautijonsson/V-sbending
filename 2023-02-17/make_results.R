@@ -13,7 +13,8 @@ theme_set(theme_visbending())
 here("2023-02-17") |>
     setwd()
 
-
+git_url <- "https://www.github.com/bgautijonsson/visbending"
+caption <- glue("Heimildir, gögn og kóði: {git_url}")
 
 
 litur_island <- "#08306b"

@@ -3,19 +3,17 @@
 # ATVINNA -----------------------------------------------------------------
 
 atvinna <- get_eurostat(
-    "lfsq_erganedm",
+    "lfsq_ergan",
     cache = TRUE,
     cache_dir = "Data"
 ) |>
     label_eurostat() |>
     filter(
-        isced11 == "All ISCED 2011 levels",
-        mgstatus %in% c("Total"),
-        citizen %in% c("Total", "Foreign country", "Reporting country"),
+        age == "From 20 to 64 years",
         sex == "Total",
-        age == "From 20 to 64 years"
+        citizen %in% c("Total", "Foreign country", "Reporting country")
     ) |>
-    select(-isced11, -sex, -age, -unit, -mgstatus) |>
+    select(geo, citizen, time, values) |>
     rename(country = geo) |>
     mutate(
         country = ifelse(str_detect(country, "Germany"), "Germany", country)

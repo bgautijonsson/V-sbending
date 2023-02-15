@@ -58,8 +58,9 @@ p1 <- plot_dat |>
         plot.margin = margin(t = 5, r = 40, b = 5, l = 5)
     ) +
     labs(
-        title = "Hlutfall vinnandi meðal erlendra íbúa",
-        subtitle = "Hlutfall einstaklinga á atvinnumarkaði sem eru ekki atvinnulausir",
+        title = "Hlutfall vinnandi meðal erlendra ríkisborgara",
+        subtitle = "Hlutfall einstaklinga á aldrinum 20 - 64 ára sem hafa vinnu",
+        caption = caption,
         x = NULL,
         y = NULL
     )
@@ -134,8 +135,9 @@ p3 <- plot_dat |>
         x = NULL,
         y = NULL,
         shape = NULL,
-        title = "Hlutfall vinnandi eftir fæðingarlandi vinnuafls",
-        subtitle = "Hlutfall einstaklinga á atvinnumarkaði sem eru ekki atvinnulausir (1. júlí 2022)"
+        title = "Hlutfall vinnandi eftir ríkisfangi vinnuafls",
+        subtitle = "Hlutfall einstaklinga á aldrinum 20 - 64 ára með vinnu (1. júlí 2022)",
+        caption = caption
     )
 
 p3
@@ -181,10 +183,10 @@ p2 <- plot_dat |>
             filter(dags == max(dags)) |>
             mutate(
                 hlutf_virk = case_when(
-                    land == "Svíþjóð" ~ hlutf_virk * 1.02,
-                    land == "Danmörk" ~ hlutf_virk * 0.99,
-                    land == "Finnland" ~ hlutf_virk * 0.995,
-                    land == "Noregur" ~ hlutf_virk * 0.997,
+                    land == "Svíþjóð" ~ hlutf_virk * 1.025,
+                    land == "Danmörk" ~ hlutf_virk * 0.982,
+                    land == "Finnland" ~ hlutf_virk * 0.992,
+                    land == "Noregur" ~ hlutf_virk * 0.998,
                     TRUE ~ hlutf_virk
                 )
             ),
@@ -214,8 +216,9 @@ p2 <- plot_dat |>
         plot.margin = margin(t = 5, r = 40, b = 5, l = 5)
     ) +
     labs(
-        title = "Þátttaka erlendra íbúa á atvinnumarkaði",
-        subtitle = "Hlutfall einstaklinga sem hafa vinnu eða eru að leita að vinnu",
+        title = "Þátttaka erlendra ríkisborgara á atvinnumarkaði",
+        subtitle = "Hlutfall einstaklinga á aldrinum 20 - 64 ára sem hafa vinnu eða eru að leita að vinnu",
+        caption = caption,
         x = NULL,
         y = NULL
     )
@@ -290,8 +293,9 @@ p4 <- plot_dat |>
         x = NULL,
         y = NULL,
         shape = NULL,
-        title = "Þátttaka á vinnumarkaði eftir fæðingarlandi vinnuafls",
-        subtitle = "Hlutfall einstaklinga sem hafa vinnu eða eru að leita að vinnu (1. júlí 2022)"
+        title = "Þátttaka á vinnumarkaði eftir ríkisfangi vinnuafls",
+        subtitle = "Hlutfall einstaklinga á aldrinum 20 - 64 ára sem hafa vinnu eða eru að leita að vinnu (1. júlí 2022)",
+        caption = caption
     )
 
 p4
