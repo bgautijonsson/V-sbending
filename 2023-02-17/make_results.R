@@ -6,9 +6,11 @@ library(geomtextpath)
 library(arrow)
 library(glue)
 library(ggtext)
+library(slider)
+library(clock)
 Sys.setlocale("LC_ALL", "is_IS.UTF-8")
 theme_set(theme_visbending())
-here("2023-03-03") |>
+here("2023-02-17") |>
     setwd()
 
 

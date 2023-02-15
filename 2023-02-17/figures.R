@@ -13,18 +13,32 @@ p1 <- plot_dat |>
     filter(is.na(litur)) |>
     ggplot(aes(dags, hlutf_atvinna, group = land)) +
     geom_line(
-        alpha = 0.5,
-        linewidth = 0.3,
+        alpha = 0.3,
+        linewidth = 0.2,
         colour = litur_annad
     ) +
-    geom_textline(
+    geom_line(
         data = plot_dat |> drop_na(litur),
-        aes(label = land, colour = litur, hjust = land),
-        linewidth = 1,
+        aes(colour = litur),
+        linewidth = 1
+    ) +
+    geom_text(
+        data = plot_dat |>
+            drop_na(litur) |>
+            filter(dags == max(dags)) |>
+            mutate(
+                hlutf_atvinna = case_when(
+                    land == "Finnland" ~ hlutf_atvinna * 1.01,
+                    TRUE ~ hlutf_atvinna
+                )
+            ),
+        aes(x = dags, y = hlutf_atvinna, label = land, col = litur),
+        hjust = 0,
+        nudge_x = 35,
         size = 5
     ) +
     scale_x_date(
-        breaks = breaks_width("3 month", offset = "1 month"),
+        breaks = breaks_width("2 year", offset = "0 month"),
         labels = label_date_short(format = c("%Y", "%B"))
     ) +
     scale_y_continuous(
@@ -34,7 +48,14 @@ p1 <- plot_dat |>
     ) +
     scale_colour_identity() +
     scale_hjust_manual(
-        values = c(0.1, 0.2, 0.6, 0.5, 0.4)
+        values = c(0.137, 0.2, 0.0655, 0.41, 0.4)
+    ) +
+    coord_cartesian(
+        clip = "off",
+        xlim = date_build(year = c(1998, 2022), month = c(1, 7))
+    ) +
+    theme(
+        plot.margin = margin(t = 5, r = 40, b = 5, l = 5)
     ) +
     labs(
         title = "Hlutfall vinnandi meðal erlendra íbúa",
@@ -131,10 +152,10 @@ ggsave(
 
 
 plot_dat <-  virkni |>
-    semi_join(
-        atvinna,
-        by = join_by(dags)
-    ) |>
+    # semi_join(
+    #     atvinna,
+    #     by = join_by(dags)
+    # ) |>
     drop_na(hlutf_virk) |>
     filter(
         vinnuafl == "Erlent"
@@ -145,18 +166,35 @@ p2 <- plot_dat |>
     filter(is.na(litur)) |>
     ggplot(aes(dags, hlutf_virk, group = land)) +
     geom_line(
-        alpha = 0.5,
-        linewidth = 0.3,
+        alpha = 0.3,
+        linewidth = 0.2,
         colour = litur_annad
     ) +
-    geom_textline(
+    geom_line(
         data = plot_dat |> drop_na(litur),
-        aes(label = land, colour = litur, hjust = land),
-        linewidth = 1,
+        aes(colour = litur),
+        linewidth = 1
+    ) +
+    geom_text(
+        data = plot_dat |>
+            drop_na(litur) |>
+            filter(dags == max(dags)) |>
+            mutate(
+                hlutf_virk = case_when(
+                    land == "Svíþjóð" ~ hlutf_virk * 1.02,
+                    land == "Danmörk" ~ hlutf_virk * 0.99,
+                    land == "Finnland" ~ hlutf_virk * 0.995,
+                    land == "Noregur" ~ hlutf_virk * 0.997,
+                    TRUE ~ hlutf_virk
+                )
+            ),
+        aes(x = dags, y = hlutf_virk, label = land, col = litur),
+        hjust = 0,
+        nudge_x = 35,
         size = 5
     ) +
     scale_x_date(
-        breaks = breaks_width("3 month", offset = "1 month"),
+        breaks = breaks_width("2 year", offset = "0 month"),
         labels = label_date_short(format = c("%Y", "%B"))
     ) +
     scale_y_continuous(
@@ -166,7 +204,14 @@ p2 <- plot_dat |>
     ) +
     scale_colour_identity() +
     scale_hjust_manual(
-        values = c(0.03, 0.25, 0.6, 0.5, 0.2)
+        values = c(0.137, 0.2, 0.0655, 0.41, 0.4)
+    ) +
+    coord_cartesian(
+        clip = "off",
+        xlim = date_build(year = c(1998, 2022), month = c(1, 7))
+    ) +
+    theme(
+        plot.margin = margin(t = 5, r = 40, b = 5, l = 5)
     ) +
     labs(
         title = "Þátttaka erlendra íbúa á atvinnumarkaði",
