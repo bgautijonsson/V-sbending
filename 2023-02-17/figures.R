@@ -74,8 +74,7 @@ ggsave(
 )
 
 
-plot_date <- format(max(plot_dat$dags), '%d. %B, %Y') |> str_replace("^0", "")
-plot_subtitle <- glue("Staðan {plot_date}")
+
 
 
 
@@ -97,6 +96,8 @@ plot_dat <- atvinna |>
     ) |>
     pivot_wider(names_from = vinnuafl, values_from = hlutf_atvinna)
 
+plot_date <- format(max(plot_dat$dags), '%d. %B, %Y') |> str_replace("^0", "")
+plot_subtitle <- glue("Staðan {plot_date}")
 
 p3 <- plot_dat |>
     ggplot(aes(y = land, colour = litur, size = land_hopur, linewidth = land_hopur)) +
@@ -136,7 +137,7 @@ p3 <- plot_dat |>
         y = NULL,
         shape = NULL,
         title = "Hlutfall vinnandi eftir ríkisfangi vinnuafls",
-        subtitle = "Hlutfall einstaklinga á aldrinum 20 - 64 ára með vinnu (1. júlí 2022)",
+        subtitle = glue("Hlutfall einstaklinga á aldrinum 20 - 64 ára með vinnu ({plot_date})"),
         caption = caption
     )
 
@@ -232,8 +233,7 @@ ggsave(
 )
 
 
-plot_date <- format(max(plot_dat$dags), '%d. %B, %Y') |> str_replace("^0", "")
-plot_subtitle <- glue("Staðan {plot_date}")
+
 
 
 
@@ -255,6 +255,8 @@ plot_dat <- virkni |>
     ) |>
     pivot_wider(names_from = vinnuafl, values_from = hlutf_virk)
 
+plot_date <- format(max(plot_dat$dags), '%d. %B, %Y') |> str_replace("^0", "")
+plot_subtitle <- glue("Staðan {plot_date}")
 
 p4 <- plot_dat |>
     ggplot(aes(y = land, colour = litur, size = land_hopur, linewidth = land_hopur)) +
@@ -294,7 +296,7 @@ p4 <- plot_dat |>
         y = NULL,
         shape = NULL,
         title = "Þátttaka á vinnumarkaði eftir ríkisfangi vinnuafls",
-        subtitle = "Hlutfall einstaklinga á aldrinum 20 - 64 ára sem hafa vinnu eða eru að leita að vinnu (1. júlí 2022)",
+        subtitle = glue("Hlutfall einstaklinga á aldrinum 20 - 64 ára sem hafa vinnu eða eru að leita að vinnu ({plot_date})"),
         caption = caption
     )
 

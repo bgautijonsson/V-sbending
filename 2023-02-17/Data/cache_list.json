@@ -1,0 +1,24 @@
+{
+  "a43d737f224c2122196a6785903cb9f6": {
+    "id": ["lfsq_ergan"],
+    "time_format": ["date"],
+    "filters": null,
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["bulk"],
+    "download_date": ["2024-01-20"]
+  },
+  "d21ad34a285b2a1252162c94f8a6fd69": {
+    "id": ["lfsq_argan"],
+    "time_format": ["date"],
+    "filters": null,
+    "type": ["code"],
+    "select_time": null,
+    "stringsAsFactors": [false],
+    "keepFlags": [false],
+    "source": ["bulk"],
+    "download_date": ["2024-01-20"]
+  }
+}

@@ -31,7 +31,7 @@ p1_solo <- plot_dat |>
     ) +
     scale_x_continuous(
         labels = label_hlutf(accuracy = 1),
-        limits = c(0, 0.3001),
+        limits = c(0, 0.31),
         expand = expansion()
     ) +
     scale_colour_manual(

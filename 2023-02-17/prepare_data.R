@@ -5,6 +5,7 @@
 atvinna <- get_eurostat(
     "lfsq_ergan",
     cache = TRUE,
+    update_cache = TRUE,
     cache_dir = "Data"
 ) |>
     label_eurostat() |>
@@ -13,7 +14,7 @@ atvinna <- get_eurostat(
         sex == "Total",
         citizen %in% c("Total", "Foreign country", "Reporting country")
     ) |>
-    select(geo, citizen, time, values) |>
+    select(geo, citizen, time = TIME_PERIOD, values) |>
     rename(country = geo) |>
     mutate(
         country = ifelse(str_detect(country, "Germany"), "Germany", country)
@@ -57,7 +58,7 @@ virkni <- get_eurostat(
         sex == "Total",
         citizen %in% c("Total", "Foreign country", "Reporting country")
     ) |>
-    select(geo, citizen, time, values) |>
+    select(geo, citizen, time = TIME_PERIOD, values) |>
     rename(country = geo) |>
     mutate(
         country = ifelse(str_detect(country, "Germany"), "Germany", country)
